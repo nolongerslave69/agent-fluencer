@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Agent-fluencer - เปลี่ยนตัวแทนที่ไม่มีใครมอง สู่ Creator ที่คนต้องง้อซื้อ</title>
-  <meta name="description" content="คอร์สออนไลน์สำหรับตัวแทนประกัน ใช้ AI + Content สร้างแบรนด์ให้ลูกค้าวิ่งเข้าหา แบบไม่ต้องไล่ตาม">
-  <meta name="theme-color" content="#1c567c">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Agent-fluencer Course - เปลี่ยนตัวแทนที่ไม่มีใครมอง สู่ Creator ที่คนต้อง "ง้อซื้อ"</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Brand Palette -->
   <style>
     :root{
-      --brand-blue:#1c567c;
-      --brand-yellow:#FFC82C;
-      --brand-white:#ffffff;
-      --brand-steel:#94A3B8;
-      --ink:#0f172a;
-      --muted:#64748b;
+      --brand-blue:#1c567c;      /* Primary */
+      --brand-yellow:#FFC82C;    /* Accent */
+      --brand-steel:#94A3B8;     /* Border/Steel */
     }
-    body{ font-family:'Kanit',sans-serif; background:#F7FAFC; color:var(--ink); }
+    body{
+      font-family:'Kanit',sans-serif;
+      background-color:#F7F7F7;
+      color:#1A202C;
+    }
+    .brand-header{ background:var(--brand-blue); color:#fff; }
     .gradient-text{
-      background: linear-gradient(90deg,#FFE08A,var(--brand-yellow));
+      background:linear-gradient(to right,#FFE08A,var(--brand-yellow));
       -webkit-background-clip:text; -webkit-text-fill-color:transparent;
     }
     .tab-active{
-      background-color: var(--brand-yellow) !important;
-      color: var(--brand-blue) !important;
-      border-color: var(--brand-yellow) !important;
+      background-color:var(--brand-yellow);
+      color:#1A202C;
+      border-color:var(--brand-yellow);
     }
-    .tab-inactive{ background-color:#E2E8F0; color:#475569; border-color:#E2E8F0; }
+    .tab-inactive{
+      background-color:#E2E8F0;
+      color:#4A5568;
+      border-color:#E2E8F0;
+    }
     .cta-button{
-      background: var(--brand-blue); color:#fff; border:2px solid var(--brand-blue);
-      transition: all .25s ease; box-shadow:0 6px 16px rgba(28,86,124,.18);
+      transition:all .3s ease;
+      box-shadow:0 4px 6px rgba(0,0,0,.1);
+      background:var(--brand-blue);
+      color:#fff;
+      border:2px solid var(--brand-blue);
     }
     .cta-button:hover{
-      transform: translateY(-2px); background:#15435f; border-color:#15435f;
-      box-shadow:0 10px 22px rgba(21,67,95,.22);
+      transform:translateY(-2px);
+      box-shadow:0 7px 14px rgba(0,0,0,.1);
+      background:#15435f;
+      border-color:#15435f;
     }
-    .badge-accent{ background: var(--brand-yellow); color: var(--brand-blue); }
-    .note-accent{ background:#FFF7E1; border-left:4px solid var(--brand-yellow); color:#92400e; }
-    .brand-border{ border-color: var(--brand-steel); }
-    .brand-header{ background: var(--brand-blue); color:#fff; }
-    .prose-lead{ color:#475569; }
+    .brand-border{ border-color:var(--brand-steel); }
   </style>
 </head>
 <body class="antialiased">
+
   <!-- Header -->
   <header class="brand-header shadow-md">
     <div class="container mx-auto px-6 py-4">
@@ -54,88 +61,305 @@
   </header>
 
   <main>
-    <!-- HERO with header image -->
+    <!-- Hero Section (Attention) -->
     <section id="attention" class="bg-white">
+      <!-- HERO IMAGE -->
       <figure class="w-full overflow-hidden">
-        <img src="assets/images/header-chasing.png" alt="ตัวแทนประกันวิ่งไล่ลูกค้า (แนวขำขัน) — ภาพ Header" loading="eager" class="w-full h-[52vw] md:h-[420px] object-cover"/>
+        <img src="./assets/images/header-chasing.png" alt="ภาพ Header: ตัวแทนประกันวิ่งไล่ลูกค้าแบบขำขัน" loading="eager" class="w-full h-[52vw] md:h-[420px] object-cover">
       </figure>
-      <div class="container mx-auto px-6 py-10 text-center">
+
+      <div class="container mx-auto px-6 py-20 md:py-24 text-center">
         <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
           เคยมั้ยคับ... ทำงานหนักแทบตาย<br>แต่เหมือนเป็น <span class="gradient-text">"ตัวแทนล่องหน"</span>?
         </h1>
-        <p class="text-lg md:text-xl prose-lead mb-8 max-w-3xl mx-auto">
+        <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
           คุณโพสต์... แล้วก็เงียบ... คุณทัก... แล้วเขาก็หาย... คุณยิงแอด... แล้วเงินก็สลาย...
-          <br><strong class="text-slate-900">พอได้แล้ว!</strong> ถึงเวลาเลิกเป็น "นักล่า" ที่น่ารำคาญ แล้วเปลี่ยนตัวเองให้เป็น "ผู้สร้าง" ที่น่าดึงดูด
+          <br><strong class="text-gray-800">พอได้แล้ว!</strong> ถึงเวลาเลิกเป็น "นักล่า" ที่น่ารำคาญ แล้วเปลี่ยนตัวเองให้เป็น "ผู้สร้าง" ที่น่าดึงดูด
         </p>
-        <div class="note-accent p-4 rounded-lg max-w-4xl mx-auto mb-10 text-left">
+        <div class="bg-amber-100 border-l-4 border-[var(--brand-yellow)] text-amber-700 p-4 rounded-lg max-w-4xl mx-auto mb-10 text-left">
           <p class="font-bold">ขอแนะนำคอร์สออนไลน์ที่จะปฏิวัติอาชีพของคุณไปตลอดกาล:</p>
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mt-2">ใช้ AI เปลี่ยนตัวแทนที่ไม่มีใครมอง สู่ Creator ที่คนต้อง "ง้อซื้อ"</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mt-2">ใช้ AI เปลี่ยนตัวแทนที่ไม่มีใครมอง สู่ Creator ที่คนต้อง "ง้อซื้อ"</h2>
         </div>
-        <a href="https://lin.ee/h1mp1nG" target="_blank" rel="noopener" class="inline-block font-bold py-4 px-10 rounded-full text-xl cta-button">
+        <!-- CTA to LINE OA -->
+        <a href="https://lin.ee/h1mp1nG" target="_blank" rel="noopener" class="cta-button font-bold py-4 px-10 rounded-full text-xl inline-block">
           ดูข้อเสนอพิเศษ!
         </a>
       </div>
     </section>
 
-    <!-- Philosophy with split illustration -->
-    <section class="py-20 bg-white">
+    <!-- Pain Points Section (Interest) -->
+    <section id="interest" class="py-20">
       <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 gap-8 items-center">
-          <figure class="rounded-xl overflow-hidden shadow-2xl">
-            <img src="assets/images/philosophy-split.png" alt="ซ้าย: นักล่าผีเสื้อ • ขวา: คนปลูกสวน (Split Illustration)" loading="lazy" class="w-full h-auto"/>
-          </figure>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <div class="bg-red-50 p-8 rounded-lg border border-red-200">
-              <h3 class="text-3xl font-bold mb-4 text-red-800">เกมที่ผิด: "นักล่าผีเสื้อ" 🦋</h3>
-              <p class="text-lg text-red-700">คุณถูกสอนให้ถือสวิงวิ่งไล่ลูกค้าไปวันๆ... เหนื่อยฉิบหาย, ไม่มั่นคง, และต้องภาวนาให้โชคเข้าข้าง... ผลลัพธ์คือความเหนื่อยล้าและท้อใจ</p>
-            </div>
-            <div class="bg-green-50 p-8 rounded-lg border border-green-200">
-              <h3 class="text-3xl font-bold mb-4 text-green-800">เกมใหม่: "คนปลูกสวน" 🌸</h3>
-              <p class="text-lg text-green-700">เราจะเลิกวิ่งไล่... แล้วหันมาสร้าง "สวนดอกไม้" (Personal Brand) ที่มีคุณค่า... จน "ผีเสื้อ" (ลูกค้าคุณภาพ) ต้องบินเข้ามาหาคุณเอง!</p>
-            </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">ถ้าคุณกำลังเจอปัญหาเหล่านี้... คอร์สนี้สร้างมาเพื่อคุณ</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg brand-border border">
+            <h3 class="font-bold text-xl mb-2">😩 รายชื่อหมด...</h3>
+            <p class="text-gray-600">ต้องทักไปหาเพื่อนจนมันเตรียมจะบล็อกอยู่แล้ว ไม่รู้จะไปหาลูกค้าใหม่จากไหน</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg brand-border border">
+            <h3 class="font-bold text-xl mb-2">🤯 คิดไม่ออก...</h3>
+            <p class="text-gray-600">นั่งจ้องหน้าคอมทุกเช้าแล้วถามตัวเองว่า "วันนี้กูจะโพสต์เชี่ยอะไรวะ?"</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg brand-border border">
+            <h3 class="font-bold text-xl mb-2">🦗 โพสต์แล้วแป้ก...</h3>
+            <p class="text-gray-600">มีแต่หัวหน้าหน่วยกับเพื่อนในทีมมากดไลค์ให้กำลังใจ แต่ไม่มีลูกค้าจริงๆ สนใจเลย</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg brand-border border">
+            <h3 class="font-bold text-xl mb-2">🔥 เผาเงินยิงแอด...</h3>
+            <p class="text-gray-600">เสียเงินไปเป็นหมื่นเป็นแสน แต่ได้กลับมาแค่ยอด Reach โง่ๆ ไม่มีคนทัก</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg brand-border border">
+            <h3 class="font-bold text-xl mb-2">🤖 ใช้ AI ไม่เป็น...</h3>
+            <p class="text-gray-600">ลองให้มันเขียนแคปชั่นทีไร แม่งได้ภาษาหุ่นยนต์ที่อ่านแล้วอยากจะร้องไห้</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg brand-border border">
+            <h3 class="font-bold text-xl mb-2"> salesman ที่คนรังเกียจ</h3>
+            <p class="text-gray-600">ทั้งๆ ที่ใจจริงอยากเป็น "ที่ปรึกษา" ที่คนเชื่อใจและอยากเข้าหา</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-16 bg-white p-8 rounded-lg shadow-xl">
+          <p class="text-xl text-gray-600 mb-4">พี่หมีจะบอกอะไรให้นะ... <strong class="text-gray-900">ทั้งหมดนี้ไม่ใช่ความผิดของคุณ!</strong></p>
+          <p class="text-2xl font-bold">คุณไม่ได้ล้มเหลวเพราะไม่เก่ง... แต่คุณล้มเหลวเพราะกำลังเล่นอยู่ใน <span class="gradient-text">"เกมที่ผิด"</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who is this for Section (Interest) -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">คอร์สนี้เหมาะกับใคร?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center brand-border border">
+            <span class="text-5xl mb-4 block">😵</span>
+            <h3 class="font-bold text-xl mb-2">คนที่ "ตัน" และ "หลงทาง"</h3>
+            <p class="text-gray-600">เคยลองทำออนไลน์แล้วแต่ไม่สำเร็จ รู้สึกว่าตัวเองไม่มีความคิดสร้างสรรค์ และไม่รู้จะไปต่อยังไง</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center brand-border border">
+            <span class="text-5xl mb-4 block">🐣</span>
+            <h3 class="font-bold text-xl mb-2">"มือใหม่" ที่อยากเริ่มต้นถูกทาง</h3>
+            <p class="text-gray-600">อยากทำออนไลน์ แต่กลัวเจ็บตัว ไม่อยากเสียเวลาลองผิดลองถูก อยากได้แผนที่ที่ชัดเจนตั้งแต่วันแรก</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center brand-border border">
+            <span class="text-5xl mb-4 block">😫</span>
+            <h3 class="font-bold text-xl mb-2">คนที่ "เบื่อ" วิธีการทำงานแบบเดิมๆ</h3>
+            <p class="text-gray-600">เกลียดการโทรหาคนแปลกหน้า เกลียดการตื๊อ และอยากเปลี่ยนมาเป็นฝ่ายที่ลูกค้าวิ่งเข้าหาบ้าง</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center brand-border border">
+            <span class="text-5xl mb-4 block">🚀</span>
+            <h3 class="font-bold text-xl mb-2">คนที่ "มองการณ์ไกล"</h3>
+            <p class="text-gray-600">รู้ว่า Personal Brand คือทางรอดในอนาคต และพร้อมที่จะใช้ AI เป็นเครื่องทุ่นแรงเพื่อสร้างความได้เปรียบ</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center md:col-span-2 lg:col-span-1 lg:col-start-2 brand-border border">
+            <span class="text-5xl mb-4 block">🦖</span>
+            <h3 class="font-bold text-xl mb-2">"หัวหน้าหน่วยทีมไดโนเสาร์"</h3>
+            <p class="text-gray-600">อยากให้ลูกทีมทำออนไลน์ แต่ส่งไปเรียนร้อยคอร์สก็ไม่สำเร็จสักที เพราะตัวเองก็ยังทำไม่เป็น</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Pricing & Action -->
+    <!-- Philosophy Section (Interest) + Split Illustration -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <!-- ภาพเปรียบเทียบ -->
+        <figure class="rounded-xl overflow-hidden shadow-2xl mb-10">
+          <img src="./assets/images/philosophy-split.png" alt="ซ้าย: นักล่าผีเสื้อ • ขวา: คนปลูกสวน (Split Illustration)" loading="lazy" class="w-full h-auto">
+        </figure>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="bg-red-50 p-8 rounded-lg border border-red-200">
+            <h3 class="text-3xl font-bold mb-4 text-red-800">เกมที่ผิด: "นักล่าผีเสื้อ" 🦋</h3>
+            <p class="text-lg text-red-700">คุณถูกสอนให้ถือสวิงวิ่งไล่ลูกค้าไปวันๆ... เหนื่อยฉิบหาย, ไม่มั่นคง, และต้องภาวนาให้โชคเข้าข้าง... ผลลัพธ์คือความเหนื่อยล้าและท้อใจ</p>
+          </div>
+          <div class="bg-green-50 p-8 rounded-lg border border-green-200">
+            <h3 class="text-3xl font-bold mb-4 text-green-800">เกมใหม่: "คนปลูกสวน" 🌸</h3>
+            <p class="text-lg text-green-700">เราจะเลิกวิ่งไล่... แล้วหันมาสร้าง "สวนดอกไม้" (Personal Brand) ที่มีคุณค่า... จน "ผีเสื้อ" (ลูกค้าคุณภาพ) ต้องบินเข้ามาหาคุณเอง!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section (Desire) -->
+    <section id="desire" class="py-20">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">แล้วเราจะสร้าง "สวน" ที่ว่านั่นได้ยังไง?</h2>
+        <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+          นี่ไม่ใช่คอร์สสอนทฤษฎีที่ฟังแล้วก็ลืม... แต่นี่คือ <strong>"สายพานการผลิต"</strong> ที่จะบังคับให้คุณสร้างผลงานระดับมืออาชีพได้ตั้งแต่วันแรก...
+          ด้วย <strong>"ทีมงาน AI ส่วนตัว"</strong> ที่พี่หมีสร้างมาให้คุณโดยเฉพาะ!
+        </p>
+
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-2xl p-8">
+          <div class="mb-8">
+            <div class="flex flex-wrap justify-center border-b-2 border-gray-200">
+              <button class="tab-button tab-active py-4 px-6 block hover:text-amber-500 focus:outline-none font-medium text-lg border-b-4 border-amber-500" data-target="tab1">🤖 เพื่อนซี้ปั้นแบรนด์</button>
+              <button class="tab-button tab-inactive py-4 px-6 block hover:text-amber-500 focus:outline-none font-medium text-lg" data-target="tab2">🗓️ เพื่อนซี้ปฏิทิน</button>
+              <button class="tab-button tab-inactive py-4 px-6 block hover:text-amber-500 focus:outline-none font-medium text-lg" data-target="tab3">🎬 เพื่อนซี้โปรดิวเซอร์</button>
+              <button class="tab-button tab-inactive py-4 px-6 block hover:text-amber-500 focus:outline-none font-medium text-lg" data-target="tab4">✨ เพื่อนซี้คอนเทนต์นอกแผน</button>
+              <button class="tab-button tab-inactive py-4 px-6 block hover:text-amber-500 focus:outline-none font-medium text-lg" data-target="tab5">📈 เพื่อนซี้ปั้นเพจโต</button>
+            </div>
+          </div>
+
+          <div id="tab-content" class="text-left">
+            <div class="tab-pane active" id="tab1">
+              <h4 class="font-bold text-2xl mb-3">The Brand Architect</h4>
+              <p class="text-gray-600 text-lg">สถาปนิกส่วนตัวที่จะสัมภาษณ์คุณจนเจอ "ตัวตน" ที่แท้จริง และสร้าง <strong>"พิมพ์เขียวแบรนด์" (Brand OS)</strong> ที่สมบูรณ์แบบให้คุณ...
+                <br><strong class="text-red-600 mt-2 block">ปัญหา "กูเป็นใครวะ?" จะหมดไป</strong></p>
+            </div>
+            <div class="tab-pane hidden" id="tab2">
+              <h4 class="font-bold text-2xl mb-3">The Planner</h4>
+              <p class="text-gray-600 text-lg">บรรณาธิการบริหารที่จะเอาพิมพ์เขียวของคุณมาแปลงเป็น <strong>"ปฏิทินคอนเทนต์รายสัปดาห์"</strong>...
+                <br><strong class="text-red-600 mt-2 block">ปัญหา "วันนี้โพสต์อะไรดี?" จะหมดไป</strong></p>
+            </div>
+            <div class="tab-pane hidden" id="tab3">
+              <h4 class="font-bold text-2xl mb-3">The Producer</h4>
+              <p class="text-gray-600 text-lg">โรงงานผลิตคอนเทนต์ส่วนตัว... คุณแค่เอา "1 หัวข้อ" จากปฏิทินไปให้มัน... มันจะสร้าง <strong>"จักรวาลคอนเทนต์"</strong> (สคริปต์, แคปชั่น, พรอมต์รูป) ออกมาให้ทั้งยวง...
+                <br><strong class="text-red-600 mt-2 block">ปัญหา "กูทำคอนเทนต์ไม่เป็น" จะหมดไป</strong></p>
+            </div>
+            <div class="tab-pane hidden" id="tab4">
+              <h4 class="font-bold text-2xl mb-3">The Creative</h4>
+              <p class="text-gray-600 text-lg">หน่วยรบพิเศษสำหรับเกาะกระแสไวรัล...
+                <br><strong class="text-red-600 mt-2 block">ปัญหา "กูตามกระแสไม่ทัน" จะหมดไป</strong></p>
+            </div>
+            <div class="tab-pane hidden" id="tab5">
+              <h4 class="font-bold text-2xl mb-3">The Organic Growth Coach</h4>
+              <p class="text-gray-600 text-lg">โค้ชภาคสนามที่จะช่วยคุณวางแผนการเติบโตแบบไม่ยิงแอด...
+                <br><strong class="text-red-600 mt-2 block">ปัญหา "ทำยังไงให้คนเห็นวะ?" จะหมดไป</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Difference block -->
+        <div class="mt-16 bg-amber-50 p-8 rounded-lg shadow-inner border border-amber-200 max-w-4xl mx-auto">
+          <h3 class="text-3xl font-bold text-center mb-6">นี่คือความแตกต่างที่สำคัญที่สุด...</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="text-center md:border-r md:border-gray-300 md:pr-8">
+              <h4 class="text-2xl font-bold text-red-700 mb-3">🚨 ทำออนไลน์แบบเดิม</h4>
+              <p class="text-lg text-gray-700">รายได้ของคุณจะมาจากแค่ <strong class="text-red-800">1 ช่องทางเดียว</strong> คือค่าคอมมิชชั่นจากการขาย... ถ้าเดือนไหนขายไม่ได้... รายได้คือศูนย์</p>
+            </div>
+            <div class="text-left">
+              <h4 class="text-2xl font-bold text-green-800 mb-4">✅ ทำแบบ Agent-fluencer</h4>
+              <p class="text-lg text-gray-700 mb-4">คุณจะสามารถสร้างรายได้ได้ถึง <strong class="text-green-900">5 ช่องทาง!</strong></p>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start"><span class="mr-2">1️⃣</span> <strong>ค่าคอมมิชชั่น (แบบอัปเกรด)</strong></li>
+                <li class="flex items-start"><span class="mr-2">2️⃣</span> <strong>ค่าที่ปรึกษา (Consulting Fee)</strong></li>
+                <li class="flex items-start"><span class="mr-2">3️⃣</span> <strong>สินค้าดิจิทัลของตัวเอง (E-books, คอร์สสั้นๆ)</strong></li>
+                <li class="flex items-start"><span class="mr-2">4️⃣</span> <strong>สปอนเซอร์ (Sponsorship)</strong></li>
+                <li class="flex items-start"><span class="mr-2">5️⃣</span> <strong>นายหน้าสินค้าอื่น (Affiliate)</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Future Vision Section (Desire) -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">ลองจินตนาการภาพอนาคตของคุณดูสิครับ...</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+          <div class="flex items-start space-x-4">
+            <span class="text-3xl">📲</span>
+            <div>
+              <h4 class="font-bold text-xl">คุณไม่ต้องโทรหาใครอีกต่อไป...</h4>
+              <p class="text-gray-600">แต่ตื่นมาเจอกับข้อความใน Inbox ที่เขียนว่า "พี่คะ/ครับ... สนใจอยากทำประกันด้วย"</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <span class="text-3xl">❤️</span>
+            <div>
+              <h4 class="font-bold text-xl">คุณเลิกโพสต์ขายของ...</h4>
+              <p class="text-gray-600">แต่โพสต์คอนเทนต์ที่มีคุณค่า... ที่คนแห่กันมาขอบคุณและแชร์ต่อ</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <span class="text-3xl">👑</span>
+            <div>
+              <h4 class="font-bold text-xl">คุณกลายเป็น "ผู้เลือก"...</h4>
+              <p class="text-gray-600">ไม่ใช่ "ผู้ถูกเลือก"... คุณสามารถเลือกได้ว่าจะรับลูกค้าคนไหน</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <span class="text-3xl">🏆</span>
+            <div>
+              <h4 class="font-bold text-xl">คุณภูมิใจในอาชีพของตัวเอง...</h4>
+              <p class="text-gray-600">เพราะคุณอยู่ในสถานะ "ผู้เชี่ยวชาญ" ที่ทุกคนอยากเข้าหาและให้ความเคารพ</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-2xl font-bold mt-12">นี่คือผลลัพธ์ที่ <strong>"ระบบ"</strong> นี้จะสร้างให้คุณ... ไม่ใช่แค่ความฝันอีกต่อไป</p>
+      </div>
+    </section>
+
+    <!-- Pricing & Action Section -->
     <section id="action" class="py-20">
       <div class="container mx-auto px-6">
-        <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border brand-border">
+        <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
           <div class="p-8 md:p-12 text-center">
             <h2 class="text-3xl font-bold mb-2">ทั้งหมดนี้... ราคาเท่าไหร่?</h2>
-            <p class="text-slate-600 mb-8">ถ้าต้องจ้างเอเจนซี่ คุณต้องจ่ายเดือนละ 50,000... ถ้าลองผิดลองถูกเอง อาจเสียเป็นแสน...</p>
-            <p class="text-slate-400 text-xl line-through">ราคาเต็ม 9,900 บาท</p>
+            <p class="text-gray-600 mb-8">ถ้าต้องจ้างเอเจนซี่ คุณต้องจ่ายเดือนละ 50,000... ถ้าลองผิดลองถูกเอง อาจเสียเป็นแสน...</p>
+
+            <p class="text-gray-500 text-xl line-through">ราคาเต็ม 9,900 บาท</p>
             <p class="text-5xl md:text-6xl font-bold my-4"><span class="gradient-text">เพียง 2,900 บาท</span></p>
-            <p class="badge-accent font-bold px-4 py-2 rounded-full inline-block mb-8">สำหรับ 100 ท่านแรกในช่วงเปิดตัวเท่านั้น!</p>
+            <p class="bg-yellow-200 text-yellow-800 font-bold px-4 py-2 rounded-full inline-block mb-8">สำหรับ 100 ท่านแรกในช่วงเปิดตัวเท่านั้น!</p>
+
             <div class="text-left space-y-4 mb-10 text-lg">
-              <p class="flex items-center"><span class="text-green-600 mr-3">✅</span> คอร์สออนไลน์เนื้อหาเข้มข้นตลอดชีพ (ไม่มีวันหมดอายุ)</p>
-              <p class="flex items-center"><span class="text-green-600 mr-3">✅</span> <strong>[ของแถม]</strong> ผู้ช่วย AI ส่วนตัว 5 ตัว (ใช้งานได้ทันที)</p>
-              <p class="flex items-center"><span class="text-green-600 mr-3">✅</span> กลุ่ม VIP สำหรับถาม-ตอบ และรับอัปเดตใหม่ๆ ตลอดไป</p>
+              <p class="flex items-center"><span class="text-green-500 mr-3">✅</span> คอร์สออนไลน์เนื้อหาเข้มข้นตลอดชีพ (ไม่มีวันหมดอายุ)</p>
+              <p class="flex items-center"><span class="text-green-500 mr-3">✅</span> <strong>[ของแถม]</strong> ผู้ช่วย AI ส่วนตัว 5 ตัว (ใช้งานได้ทันที)</p>
+              <p class="flex items-center"><span class="text-green-500 mr-3">✅</span> กลุ่ม VIP สำหรับถาม-ตอบ และรับอัปเดตใหม่ๆ ตลอดไป</p>
             </div>
+
+            <!-- MAIN CTA to LINE OA -->
             <a href="https://lin.ee/h1mp1nG" target="_blank" rel="noopener" class="cta-button w-full font-bold py-5 px-10 rounded-lg text-2xl block">
               สมัครเรียนทันที! (เปลี่ยนชีวิตวันนี้)
             </a>
           </div>
-          <div class="bg-slate-100 p-8 text-center">
+          <div class="bg-gray-100 p-8 text-center">
             <h4 class="font-bold text-xl mb-2">การันตีความพอใจ 100% 🛡️</h4>
-            <p class="text-slate-600">ถ้าเรียนไปแล้วภายใน 7 วัน รู้สึกว่ามันไม่ใช่... ไม่พอใจ... ไม่ได้ประโยชน์... ทักมาบอกพี่หมี... <strong>ยินดีคืนเงินเต็มจำนวนแบบไม่มีเงื่อนไข!</strong></p>
+            <p class="text-gray-600">ถ้าเรียนไปแล้วภายใน 7 วัน รู้สึกว่ามันไม่ใช่... ไม่พอใจ... ไม่ได้ประโยชน์... ทักมาบอกพี่หมี... <strong>ยินดีคืนเงินเต็มจำนวนแบบไม่มีเงื่อนไข!</strong></p>
           </div>
         </div>
+
         <div class="text-center mt-12 max-w-2xl mx-auto">
           <p class="text-lg font-bold">ป.ล. คุณมี 2 ทางเลือกครับ...</p>
-          <p class="text-slate-600">หนึ่งคือลงทุนแค่ 2,900 บาท เพื่อให้ได้ "ระบบ" และ "ทีมงาน" ที่จะทำออนไลน์ได้จริง ๆ ซะทีทั้งทีม หรือสองปิดหน้านี้ไป แล้วให้คู่แข่งของคุณได้มันไป</p>
+          <p class="text-gray-600">หนึ่งคือลงทุนแค่ 2,900 บาท เพื่อให้ได้ "ระบบ" และ "ทีมงาน" ที่จะทำออนไลน์ได้จริง ๆ ซะทีทั้งทีม หรือสองปิดหน้านี้ไป แล้วให้คู่แข่งของคุณได้มันไป</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-slate-900 text-white py-8">
+  <footer class="bg-gray-800 text-white py-8">
     <div class="container mx-auto px-6 text-center">
-      <p>&copy; 2025 The Agent-fluencer. สงวนลิขสิทธิ์ · 
-        <a href="https://lin.ee/h1mp1nG" target="_blank" class="underline decoration-[var(--brand-yellow)] decoration-2 underline-offset-4">ทัก LINE OA</a>
+      <p>&copy; 2025 The Agent-fluencer. สงวนลิขสิทธิ์ ·
+        <a href="https://lin.ee/h1mp1nG" target="_blank" rel="noopener" class="underline decoration-[var(--brand-yellow)] decoration-2 underline-offset-4">ทัก LINE OA</a>
       </p>
     </div>
   </footer>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    // ให้แท็บแรกโชว์ตั้งแต่โหลด
+    document.getElementById('tab1')?.classList.remove('hidden');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = document.querySelector(`#${button.dataset.target}`);
+
+        tabButtons.forEach(btn => {
+          btn.classList.remove('tab-active','border-amber-500');
+          btn.classList.add('tab-inactive');
+        });
+
+        button.classList.add('tab-active','border-amber-500');
+        button.classList.remove('tab-inactive');
+
+        tabPanes.forEach(pane => pane.classList.add('hidden'));
+        target.classList.remove('hidden');
+      });
+    });
+  </script>
 </body>
 </html>
